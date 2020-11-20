@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>渐变边框</title>
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style type="text/css">
+   
+.demo1 {
+width: 200px;
+height: 200px;
+border-radius: 100px;
+box-shadow: 18px -14px 0 0 rgba(255,211,132,.8),0 12px 0 0 rgba(132,245,255,.8)
+}
+.svg-line{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+.movepath {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  -webkit-animation: dash 6s ease-in forwards;
+  animation: dash 6s ease-in forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+@-webkit-keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+</style>
+<body>
+<h3>多重box-shadow</h3>
+<div class="demo1"></div>
+
+<h3>svg动画</h3>
+<svg class="lds-message" width="80px" height="80px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <g transform="translate(20 50)">
+        <circle cx="0" cy="0" r="7" fill="#e15b64" transform="scale(0.99275 0.99275)">
+            <animateTransform attributeName="transform" type="scale" begin="-0.375s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+        </circle>
+    </g>
+    <g transform="translate(40 50)">
+        <circle cx="0" cy="0" r="7" fill="#f47e60" transform="scale(0.773605 0.773605)">
+            <animateTransform attributeName="transform" type="scale" begin="-0.25s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+        </circle>
+    </g>
+    <g transform="translate(60 50)">
+        <circle cx="0" cy="0" r="7" fill="#f8b26a" transform="scale(0.42525 0.42525)">
+            <animateTransform attributeName="transform" type="scale" begin="-0.125s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+        </circle>
+    </g>
+    <g transform="translate(80 50)">
+        <circle cx="0" cy="0" r="7" fill="#abbd81" transform="scale(0.113418 0.113418)">
+            <animateTransform attributeName="transform" type="scale" begin="0s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s" repeatCount="indefinite"></animateTransform>
+        </circle>
+    </g>
+</svg>
+
+<h3>svg渐变线条</h3>
+<div class="svg-line">
+    <svg viewBox="0 0 200 200">
+        <defs>
+          <linearGradient x1="0%" y1="100%" x2="100%" y2="100%" id="linearGradient-1">
+              <stop stop-color="rgba(0,122,255,.1)" offset="0%"></stop>
+              <stop stop-color="#51FF00" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="
+             M 100, 100
+             m -75, 0
+             a 75,75 0 1,0 150,0
+             a 75,75 0 1,0 -150,0
+             " 
+             stroke="url(#linearGradient-1)" stroke-width="4" class="movepath"
+        ></path>
+        </g>
+    </svg>
+</div>
+</body>
+<script>
+    
+</script>
+</html>
